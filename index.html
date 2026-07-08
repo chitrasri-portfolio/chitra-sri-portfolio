@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chitrasri | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(135deg,#0f172a,#1e3a8a,#312e81);
+color:white;
+overflow-x:hidden;
+}
+
+header{
+position:fixed;
+width:100%;
+top:0;
+left:0;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+padding:18px 8%;
+z-index:1000;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+color:#00e5ff;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:30px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-size:17px;
+transition:.3s;
+}
+
+nav ul li a:hover{
+color:#00e5ff;
+}
+
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+min-height:100vh;
+padding:120px 10%;
+}
+
+.hero-text{
+max-width:600px;
+}
+
+.hero-text h1{
+font-size:60px;
+margin-bottom:10px;
+}
+
+.hero-text span{
+color:#00e5ff;
+}
+
+.hero-text h2{
+font-size:32px;
+color:#b388ff;
+margin-bottom:20px;
+}
+
+.hero-text p{
+font-size:18px;
+line-height:30px;
+margin-bottom:25px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 35px;
+background:#00e5ff;
+color:black;
+text-decoration:none;
+border-radius:35px;
+font-weight:600;
+transition:.4s;
+}
+
+.btn:hover{
+transform:scale(1.08);
+box-shadow:0 0 25px cyan;
+}
+
+.hero-img img{
+width:330px;
+height:330px;
+border-radius:50%;
+border:5px solid cyan;
+box-shadow:0 0 45px cyan;
+transition:.5s;
+object-fit:cover;
+}
+
+.hero-img img:hover{
+transform:rotateY(15deg) scale(1.05);
+}
+
+section{
+padding:100px 10%;
+}
+
+.title{
+text-align:center;
+font-size:40px;
+color:#00e5ff;
+margin-bottom:40px;
+}
+
+.card{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+padding:35px;
+border-radius:20px;
+box-shadow:0 0 25px rgba(0,255,255,.3);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 35px cyan;
+}
+
+@media(max-width:768px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-img{
+margin-top:40px;
+}
+
+.hero-text h1{
+font-size:42px;
+}
+
+.hero-img img{
+width:250px;
+height:250px;
+}
+
+nav ul{
+display:none;
+}
+
+}
+/* ===================== SKILLS ===================== */
+
+.progress{
+    width:100%;
+    height:20px;
+    background:rgba(255,255,255,0.15);
+    border-radius:20px;
+    overflow:hidden;
+    margin:10px 0 25px;
+}
+
+.progress div{
+    height:100%;
+    line-height:20px;
+    text-align:right;
+    padding-right:10px;
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    border-radius:20px;
+    animation:fillBar 2s ease;
+}
+
+.python{
+    width:90%;
+    background:linear-gradient(90deg,#00e5ff,#00c853);
+}
+
+.html{
+    width:80%;
+    background:linear-gradient(90deg,#ff9800,#ffc107);
+}
+
+.css{
+    width:85%;
+    background:linear-gradient(90deg,#2196f3,#00bcd4);
+}
+
+.cpp{
+    width:90%;
+    background:linear-gradient(90deg,#9c27b0,#673ab7);
+}
+
+@keyframes fillBar{
+    from{
+        width:0;
+    }
+}
+
+/* ===================== PROJECTS ===================== */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    margin-top:20px;
+}
+
+.project-card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(0,255,255,.25);
+    transition:.5s;
+}
+
+.project-card:hover{
+    transform:translateY(-12px) rotateX(8deg);
+    box-shadow:0 0 35px cyan;
+}
+
+.project-card h3{
+    color:#00e5ff;
+    margin-bottom:15px;
+}
+
+.project-card p{
+    line-height:28px;
+}
+
+/* ===================== CONTACT ===================== */
+
+#contact .card p{
+    font-size:18px;
+    margin:10px 0;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media(max-width:768px){
+
+.cards{
+    grid-template-columns:1fr;
+}
+
+.progress{
+    height:18px;
+}
+
+.progress div{
+    font-size:11px;
+}
+
+.title{
+    font-size:32px;
+}
+
+.hero-text h2{
+    font-size:24px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">Portfolio</div>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#education">Education</a></li>
+
+<li><a href="#skills">Skills</a></li>
+
+<li><a href="#projects">Projects</a></li>
+
+<li><a href="#internship">Internship</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="hero" id="home">
+
+<div class="hero-text">
+
+<h1>Hello, I'm <span>Chitrasri</span></h1>
+
+<h2>Frontend Developer</h2>
+
+<p>
+I am a Third Year B.Tech (AI & DS) student passionate about
+Artificial Intelligence, Frontend Development and Modern Web Technologies.
+</p>
+
+<a href="#about" class="btn">Explore More</a>
+
+</div>
+
+<div class="hero-img">
+
+<img src="profile.jpg" alt="Profile">
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="title">About Me</h2>
+
+<div class="card">
+
+<p style="font-size:18px; line-height:35px;">
+
+I am Chitrasri, a Third Year B.Tech (Artificial Intelligence &
+Data Science) student. I enjoy building responsive websites,
+AI-based applications and modern web interfaces.
+I continuously improve my programming and development skills
+through projects, internships and hands-on learning.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- Part 2 starts from here -->
+<!-- ================= EDUCATION ================= -->
+
+<section id="education">
+
+<h2 class="title">Education</h2>
+
+<div class="card">
+
+<h3>B.Tech (Artificial Intelligence & Data Science)</h3>
+
+<br>
+
+<p>🎓 Third Year Student</p>
+
+<p>Passionate about Artificial Intelligence, Data Science, Web Development and Modern Technologies.</p>
+
+</div>
+
+</section>
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+<h2 class="title">Skills</h2>
+
+<div class="card">
+
+<p>Python</p>
+
+<div class="progress">
+<div class="python">90%</div>
+</div>
+
+<br>
+
+<p>HTML</p>
+
+<div class="progress">
+<div class="html">80%</div>
+</div>
+
+<br>
+
+<p>CSS</p>
+
+<div class="progress">
+<div class="css">85%</div>
+</div>
+
+<br>
+
+<p>C++</p>
+
+<div class="progress">
+<div class="cpp">90%</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+<h2 class="title">Projects</h2>
+
+<div class="cards">
+
+<div class="project-card">
+
+<h3>Personal Portfolio Website</h3>
+
+<p>
+Designed and developed a responsive portfolio website using
+HTML, CSS and JavaScript.
+</p>
+
+</div>
+
+<div class="project-card">
+
+<h3>Intelligent Doubt Solving Chatbot</h3>
+
+<p>
+AI-powered chatbot that helps students solve academic doubts.
+</p>
+
+</div>
+
+<div class="project-card">
+
+<h3>Arduino Raspberry Pi Bluetooth Control</h3>
+
+<p>
+Bluetooth-based automation project using Arduino and Raspberry Pi.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= INTERNSHIPS ================= -->
+
+<section id="internship">
+
+<h2 class="title">Internships</h2>
+
+<div class="cards">
+
+<div class="project-card">
+
+<h3>Web Development</h3>
+
+<p>Completed internship in Web Development.</p>
+
+</div>
+
+<div class="project-card">
+
+<h3>Data Science & AI</h3>
+
+<p>Basics of Python, AI and Data Science.</p>
+
+</div>
+
+<div class="project-card">
+
+<h3>Web Designing</h3>
+
+<p>Worked on responsive web design and UI development.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<h2 class="title">Contact Me</h2>
+
+<div class="card">
+
+<p><strong>Name:</strong> Chitrasri</p>
+
+<br>
+
+<p><strong>Email:</strong> yourmail@gmail.com</p>
+
+<br>
+
+<p><strong>Phone:</strong> +91 XXXXX XXXXX</p>
+
+<br>
+
+<p><strong>Location:</strong> Tamil Nadu, India</p>
+
+</div>
+
+</section>
+
+<script>
+
+// Typing Effect
+const words = ["Frontend Developer", "AI & DS Student", "Web Designer"];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+const typingElement = document.querySelector(".hero-text h2");
+
+function typeEffect() {
+
+    const currentWord = words[wordIndex];
+
+    if (!isDeleting) {
+        typingElement.textContent = currentWord.substring(0, charIndex++);
+    } else {
+        typingElement.textContent = currentWord.substring(0, charIndex--);
+    }
+
+    let speed = isDeleting ? 60 : 120;
+
+    if (!isDeleting && charIndex > currentWord.length) {
+        isDeleting = true;
+        speed = 1200;
+    }
+
+    if (isDeleting && charIndex < 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+    }
+
+    setTimeout(typeEffect, speed);
+}
+
+typeEffect();
+
+
+// Scroll Animation
+const cards = document.querySelectorAll(".card, .project-card");
+
+window.addEventListener("scroll", () => {
+
+    cards.forEach(card => {
+
+        const position = card.getBoundingClientRect().top;
+        const screen = window.innerHeight;
+
+        if(position < screen - 100){
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+        }
+
+    });
+
+});
+
+// Initial Style
+cards.forEach(card=>{
+    card.style.opacity="0";
+    card.style.transform="translateY(50px)";
+    card.style.transition="0.8s";
+});
+
+</script>
+
+</body>
+</html>
