@@ -19,13 +19,48 @@
 }
 
 body{
-    background:linear-gradient(135deg,#8e0e5a,#f6d365);
+    background:linear-gradient(-45deg,#0f172a,#1e3a8a,#6d28d9,#0f766e);
+    background-size:400% 400%;
+    animation:gradientBG 12s ease infinite;
     color:white;
     overflow-x:hidden;
 }
 
+/@keyframes gradientBG{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+    body::before{
+    content:"";
+    position:fixed;
+    top:-50%;
+    left:-50%;
+    width:200%;
+    height:200%;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.08), transparent 25%),
+        radial-gradient(circle at 80% 40%, rgba(0,229,255,.08), transparent 30%),
+        radial-gradient(circle at 50% 80%, rgba(179,136,255,.08), transparent 30%);
+    animation:rotateBG 25s linear infinite;
+    pointer-events:none;
+    z-index:-1;
+}
 
-/* HEADER */
+@keyframes rotateBG{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
 
 header{
     position:fixed;
